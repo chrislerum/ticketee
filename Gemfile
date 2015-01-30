@@ -10,6 +10,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
   gem "capybara", "~> 2.4"
 end
+group :development do
+  gem 'guard-rails'
+  gem 'guard-rspec'
+end
 group :development, :test do
   gem "rspec-rails", "~> 3.1.0"
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
