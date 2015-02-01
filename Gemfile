@@ -17,6 +17,8 @@ gem 'awesome_print'
 gem 'dragonfly', '~> 1.0.7'
 gem 'devise'
 gem 'sidekiq'
+gem "font-awesome-rails", "~> 4.2"
+gem "simple_form", "3.1.0"
 group :test do
   #gem 'shoulda-matchers', require: false
   gem 'capybara'
