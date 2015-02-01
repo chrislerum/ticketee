@@ -19,6 +19,7 @@ guard :rspec, cmd: "bin/spring rspec", all_on_start: true, all_after_pass: true 
   dsl.watch_spec_files_for(rails.views)
 
   watch(rails.controllers) { 'spec' }
+  watch('/^app\/helpers\/*') { 'spec' }
 
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "spec" }
