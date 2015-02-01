@@ -1,2 +1,8 @@
-=link_to "New Project", new_project_path
+h1 Projects
+=link_to "New Project", new_project_path, class: "new"
+
+#projects
+  -@projects.each do |project|
+    h2=link_to project.name, project
+    p=project.description
 
