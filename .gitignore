@@ -4,4 +4,6 @@
 /log/*
 !/log/.keep
 /tmp
-/config/database.yml
+.DS_Store
+database.yml
+/public/assets
