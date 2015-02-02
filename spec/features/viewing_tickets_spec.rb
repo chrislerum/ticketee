@@ -2,10 +2,11 @@ require 'rails_helper'
 
 feature "Viewing tickets" do
   before do
+    user = create :user
     sublime = create(:project, name: "Sublime Text 3")
-    create(:ticket, project: sublime, title: "Make it shiny!", description: "Gradients! Starbursts! Oh my!")
+    create(:ticket, project: sublime, title: "Make it shiny!", description: "Gradients! Starbursts! Oh my!", author: user)
     ie = create(:project, name: "Internet Explorer")
-    create(:ticket, project: ie, title: "Standards Compliance", description: "Isn't a joke.")
+    create(:ticket, project: ie, title: "Standards Compliance", description: "Isn't a joke.", author: user)
     visit "/"
   end
 

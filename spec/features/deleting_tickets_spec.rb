@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 feature "Deleting tickets" do
-  let!(:project) { create(:project) }
-  let!(:ticket)  { create(:ticket, project: project) }
+  let!(:project) {create :project}
+  let(:user) {create :user}
+  let!(:ticket) {create :ticket, project: project, author: user}
   before do
     visit project_ticket_path(project, ticket)
   end
