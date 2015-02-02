@@ -14,17 +14,17 @@ html
         ul.nav.navbar-nav
           li class=('active' if current_page?("/"))
             =link_to "Home", root_path
-        -unless user_signed_in?
-          li class=('active' if current_page?("/users/signup"))
-            =link_to "Sign up", new_user_registration_path
-          li class=('active' if current_page?("/users/sign_in"))
-            =link_to "Sign in", new_user_session_path
-        -if user_signed_in?
-          ul.nav.navbar-nav.navbar-right
+        ul.nav.navbar-nav.navbar-right
+          -if user_signed_in?
             li.navbar-text
               'Signed in as
               =current_user.email
             li=link_to "Sign out", destroy_user_session_path, method: :delete
+          -else
+            li class=('active' if current_page?("/users/signup"))
+              =link_to "Sign up", new_user_registration_path
+            li class=('active' if current_page?("/users/sign_in"))
+              =link_to "Sign in", new_user_session_path
     .container
       -flash.each do |key, message|
         div class="alert alert-#{key}"
