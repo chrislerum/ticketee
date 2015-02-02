@@ -7,3 +7,10 @@
     li=link_to "Edit Project", edit_project_path(@project), class: "edit"
     li=link_to "Delete Project", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?"}, class: "delete"
 p=@project.description
+ul#tickets
+  -@project.tickets.each do |ticket|
+    li
+      |#
+      =ticket.id
+      ' -
+      =link_to ticket.title, [@project, ticket]
