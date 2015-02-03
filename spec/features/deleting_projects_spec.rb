@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 feature "Deleting projects" do
+  before do
+    sign_in_as!(create(:admin_user))
+  end
   scenario "Deleting a project" do
     create(:project, name: "Sublime Text 3")
     visit "/"

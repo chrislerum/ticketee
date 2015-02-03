@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature "Editing projects" do
   before do
+    sign_in_as!(create(:admin_user))
     create(:project, name: "Sublime Text 3")
     visit "/"
     click_link "Sublime Text 3"

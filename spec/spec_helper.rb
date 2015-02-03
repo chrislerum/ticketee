@@ -1,5 +1,6 @@
 require 'database_cleaner'
 #require 'shoulda/matchers'
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
 Capybara.javascript_driver = :webkit
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
