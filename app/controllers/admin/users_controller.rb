@@ -9,7 +9,6 @@ class Admin::UsersController < Admin::BaseController
 
   def create
     params = user_params.dup
-    pp params
     params[:password_confirmation] = params[:password]
     @user = User.new(params)
     if @user.save
@@ -24,6 +23,6 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation, :admin)
   end
 end
